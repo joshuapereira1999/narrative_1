@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grammar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      font-size: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .miriwoong {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #0077cc;
+      cursor: pointer;
+      text-decoration: underline;
+      margin-bottom: 0.5rem;
+    }
+
+    .english, .class {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .sentence-container {
+      margin-top: 0.75rem;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .sentence {
+      font-size: 0.95rem;
+      color: #222;
+    }
+
+    .translation {
+      color: #666;
+      font-style: italic;
+      font-size: 0.9rem;
+    }
+
+    .hidden-audio {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Grammar</h1>
+
+  <div class="grid">
+    
+      <div class="card">
+        
+          <img src="images/daloong.jpg" alt="this (non-singular)" style="width: 100%; height: auto; border-radius: 4px; margin-bottom: 0.5rem;" />
+        
+
+        <div class="miriwoong" onclick="toggleSentence('1')">
+          berraying(a)
+        </div>
+
+        
+          <audio id="audio-1" class="hidden-audio">
+            <source src="audio/berrayinga.mp3" type="audio/mpeg" />
+          </audio>
+        
+
+        <div class="english">English: this (non-singular)</div>
+        <div class="class">Class: demonstrative</div>
+
+        
+          <div id="sentence-1" class="sentence-container" style="display: none;">
+            <div class="sentence">Berrayinga daloong ngoojalentha.</div>
+            
+              <div class="translation">These daloong are green.</div>
+            
+          </div>
+        
+      </div>
+    
+      <div class="card">
+        
+          <img src="images/mayaroong.jpg" alt="my" style="width: 100%; height: auto; border-radius: 4px; margin-bottom: 0.5rem;" />
+        
+
+        <div class="miriwoong" onclick="toggleSentence('2')">
+          ngayang/ngayany
+        </div>
+
+        
+          <audio id="audio-2" class="hidden-audio">
+            <source src="audio/ngayang_ngayany.mp3" type="audio/mpeg" />
+          </audio>
+        
+
+        <div class="english">English: my</div>
+        <div class="class">Class: adjective</div>
+
+        
+          <div id="sentence-2" class="sentence-container" style="display: none;">
+            <div class="sentence">Ngenjayinga ngayang mayaroong.</div>
+            
+              <div class="translation">This is my house.</div>
+            
+          </div>
+        
+      </div>
+    
+      <div class="card">
+        
+          <img src="images/gawooleng.jpg" alt="this (fem)" style="width: 100%; height: auto; border-radius: 4px; margin-bottom: 0.5rem;" />
+        
+
+        <div class="miriwoong" onclick="toggleSentence('3')">
+          ngelayiny(a)
+        </div>
+
+        
+          <audio id="audio-3" class="hidden-audio">
+            <source src="audio/ngelayiny(a).mp3" type="audio/mpeg" />
+          </audio>
+        
+
+        <div class="english">English: this (fem)</div>
+        <div class="class">Class: demonstrative</div>
+
+        
+          <div id="sentence-3" class="sentence-container" style="display: none;">
+            <div class="sentence">Ngelayinya gawooleng.</div>
+            
+              <div class="translation">This is a woman.</div>
+            
+          </div>
+        
+      </div>
+    
+      <div class="card">
+        
+          <img src="images/jawaleng.jpg" alt="this (masc)" style="width: 100%; height: auto; border-radius: 4px; margin-bottom: 0.5rem;" />
+        
+
+        <div class="miriwoong" onclick="toggleSentence('4')">
+          ngenjaying(a)
+        </div>
+
+        
+          <audio id="audio-4" class="hidden-audio">
+            <source src="audio/ngenjaying(a).mp3" type="audio/mpeg" />
+          </audio>
+        
+
+        <div class="english">English: this (masc)</div>
+        <div class="class">Class: demonstrative</div>
+
+        
+          <div id="sentence-4" class="sentence-container" style="display: none;">
+            <div class="sentence">Ngenjayinga jawaleng.</div>
+            
+              <div class="translation">This is a man.</div>
+            
+          </div>
+        
+      </div>
+    
+      <div class="card">
+        
+          <img src="images/thena.jpg" alt="what (thing)?" style="width: 100%; height: auto; border-radius: 4px; margin-bottom: 0.5rem;" />
+        
+
+        <div class="miriwoong" onclick="toggleSentence('5')">
+          thena?
+        </div>
+
+        
+          <audio id="audio-5" class="hidden-audio">
+            <source src="audio/thena.mp3" type="audio/mpeg" />
+          </audio>
+        
+
+        <div class="english">English: what (thing)?</div>
+        <div class="class">Class: interrogative</div>
+
+        
+          <div id="sentence-5" class="sentence-container" style="display: none;">
+            <div class="sentence">Thena berrayinga?</div>
+            
+              <div class="translation">What is this?</div>
+            
+          </div>
+        
+      </div>
+    
+  </div>
+
+  <script>
+    function toggleSentence(index) {
+      const audio = document.getElementById(`audio-${index}`);
+      const sentenceDiv = document.getElementById(`sentence-${index}`);
+      
+      if (sentenceDiv) {
+        sentenceDiv.style.display = sentenceDiv.style.display === 'none' ? 'block' : 'none';
+      }
+
+      if (audio) {
+        audio.play();
+      }
+    }
+  </script>
+</body>
+</html>
